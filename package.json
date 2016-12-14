@@ -1,0 +1,20 @@
+{
+  "name": "q1ProjectNewAvengers",
+  "version": "1.0.0",
+  "description": "This webpage will allow a user to create their own version of the Avengers.  It will give them an input box to enter the name of their new team and give them a dropdown box to pick the individual heroes of their team.  In the end it will show a joint picture of their entire team underneath a banner of their new team name.",
+  "main": "js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BZhawaii/q1ProjectNewAvengers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BZhawaii/q1ProjectNewAvengers/issues"
+  },
+  "homepage": "https://github.com/BZhawaii/q1ProjectNewAvengers#readme"
+}

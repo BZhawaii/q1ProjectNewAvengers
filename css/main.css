@@ -23,41 +23,119 @@ h1  {
 .middle_container {
   display: flex;
   width: 100%;
-  height: 20%;
-  background-color: white;
+  height: 40vw;
+  background-color: silver;
   justify-content: center;
 }
+.input_line1 {
+  width: 45%;
+  height: 30vw;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.input_team_role {
+  width: 45%;
+  height: 30vw;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+
+/*INFORMATION BLOCKS*/
+
+.info_blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2%;
+
+
+}
+.info {
+  width: 25em;
+  height: 25em;
+  background-color: gray;
+  padding: 2%;
+  border: 2% solid black;
+  margin: 2%;
+
+
+
+}
+.separator {
+  width: 100%;
+
+}
+/*BLACKBOARD ON THE MAIN PAGE*/
+.outer_blackboard {
+  display: flex;
+  justify-content: center;
+}
+.blackboard {
+  display: flex;
+  height: 60em;
+  width: 90%;
+  background-color: white;
+  justify-content: center;
+  margin: 0;
+}
+.blackboard_label {
+  display: flex;
+  flex-direction: column;
+  width: 30em;
+}
+.blackboard p {
+  font-size: 5vw;
+}
+.blackboard_image {
+  display: flex;
+  flex-direction: column;
+}
+.just_image img {
+  height: 40em;
+  width: 26em;
+}
+/*FOOTER*/
+.footer_container {
+  height: 5%;
+  background-color: gray;
+}
+
+/*NEW TEAM PAGE*/
+
 .display_container_label {
+  padding-top: 1%;
   display: flex;
   background-color: white;
   justify-content: center;
   background-color: black;
 }
+h2 {
+  color: silver;
+  font-family: 'Francois One', sans-serif;
+}
+.new {
+  color: silver;
+}
 .display_container_images {
   display: flex;
-  background-color: white;
-  justify-content: center;
+  background-color: silver;
+  justify-content: space-around;
   padding-top: 10%
 
 }
 .team img {
-  height: 19em;
+  height: 25em;
   width: 13em;
 }
-.input_line {
-  width: 25%;
-  height: 20vw;
-  padding-left: 2%;
-  padding-right: 2%;
+.team p {
+  font-size: 1.5vw;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-align: center;
 }
+
 h5 {
   font-size: 3em;
   text-decoration: underline;
-}
-
-
-/*FOOTER*/
-.footer_container {
-  height: 5%;
-  background-color: white;
 }
