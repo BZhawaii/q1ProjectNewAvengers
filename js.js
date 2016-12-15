@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 console.log("Ready");
+  $("#accepted").css("display", "none");  // To hide
   var new_name_is = "";
   var savedRole = "";
   var new_name_is = "";
@@ -8,44 +9,19 @@ console.log("Ready");
 console.log(passUp);
   $("h4").text(passUp);
   $("h2").text(passUp);
+
+
+
   // function_populate_team();
-  // FUNCTION TO SEND DATA FROM LOCAL STORAGE TO NEW TEAM PLACE
-console.log("Right before the event");
+// FUNCTION TO SEND DATA FROM LOCAL STORAGE TO NEW TEAM PLACE
+
   $(".show").on('click', function(event) {
     event.preventDefault();
-
-console.log("I'm in the event");
-
-// SENDS LEADER INFO
-    var name = localStorage.getItem('Leader_name');
-    var image = localStorage.getItem('Leader_pic');
-    $(".leader").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
-// SENDS CO-LEADERS INFO
-    var name = localStorage.getItem('Co_leader1_name');
-    var image = localStorage.getItem('Co_leader1_pic');
-    $(".co_leader1").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
-
-    var name = localStorage.getItem('Co-leader2_name');
-    var image = localStorage.getItem('Co-leader2_pic');
-    $(".co_leader2").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
-// SENDS MEMBER INFO
-    var name = localStorage.getItem('Member1_name');
-    var image = localStorage.getItem('Member1_pic');
-    $(".member1").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
-
-    var name = localStorage.getItem('Member2_name');
-    var image = localStorage.getItem('Member2_pic');
-    $(".member2").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
-
-    var name = localStorage.getItem('Member3_name');
-    var image = localStorage.getItem('Member3_pic');
-    $(".member3").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
-
-    var name = localStorage.getItem('Member4_name');
-    var image = localStorage.getItem('Member4_pic');
-    $(".member4").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
-
+    load_team();
   })
+
+
+
 
 });
   saveTheName();
@@ -57,6 +33,8 @@ console.log("I'm in the event");
 
 function saveTheName() {
   $("#teamName").change(function () {
+// ERASES ALL THE MEMBERS FROM PREVIOUS TEAMS
+    localStorage.clear();
   new_name_is = $("#teamName").val();
 // PASS THE newNameIs INTO A LOCAL STORAGE
   localStorage.setItem('local_name', new_name_is);
@@ -157,5 +135,44 @@ console.log(role_name);
     localStorage.setItem(role_name, bb_name);
     var role_pic = bb_role + "_pic";
     localStorage.setItem(role_pic, bb_pic);
+
+
+
+
+$("#accepted").css("display", "");  // To unhide
+
   })
+}
+
+
+function load_team() {
+
+  // SENDS LEADER INFO
+  var name = localStorage.getItem('Leader_name');
+  var image = localStorage.getItem('Leader_pic');
+  $(".leader").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+  // SENDS CO-LEADERS INFO
+  var name = localStorage.getItem('Co_leader1_name');
+  var image = localStorage.getItem('Co_leader1_pic');
+  $(".co_leader1").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+  var name = localStorage.getItem('Co_leader2_name');
+  var image = localStorage.getItem('Co_leader2_pic');
+  $(".co_leader2").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+  // SENDS MEMBER INFO
+  var name = localStorage.getItem('Member1_name');
+  var image = localStorage.getItem('Member1_pic');
+  $(".member1").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+  var name = localStorage.getItem('Member2_name');
+  var image = localStorage.getItem('Member2_pic');
+  $(".member2").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+  var name = localStorage.getItem('Member3_name');
+  var image = localStorage.getItem('Member3_pic');
+  $(".member3").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+  var name = localStorage.getItem('Member4_name');
+  var image = localStorage.getItem('Member4_pic');
+  $(".member4").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
 }

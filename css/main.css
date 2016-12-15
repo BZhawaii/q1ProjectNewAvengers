@@ -32,27 +32,25 @@ header .nav_tags a {
 .middle_container {
   display: flex;
   width: 100%;
-  height: 40vw;
-
   background-color: silver;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .inner_middle_container {
   display: flex;
-  width: 90%;
-  justify-content: space-between;
+  flex-wrap: wrap;
 
+  justify-content: space-around;
+  padding: 5%;
 }
 .intro {
   width: 48%;
-  height: 30vw;
+
   padding-left: 2%;
   padding-right: 2%;
 }
-.input_team_role {
+.input_team {
   width: 45%;
-  height: 30vw;
+
   padding-left: 2%;
   padding-right: 2%;
 }
@@ -91,25 +89,43 @@ header .nav_tags a {
 }
 .blackboard {
   display: flex;
-  height: 90em;
+  height: 95em;
   width: 90%;
   background-color: lightgray;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  margin: 0;
+  margin-top: 0;
 }
 .blackboard_label {
-  background-color: darkgray;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 12em;
-  width: 100%;
+  justify-content: space-around;;
+  width: 90%;
+  height: 10em;
+  background-color: purple;
+  padding-left: 7%;
+  padding-right: 7%;
 }
 .bl_label {
   color: white;
   font-size: 2vw;
+}
+.role_and_name {
+  display: flex;
+  width: 65%;
+
+  justify-content: space-around;
+}
+.full_character {
+  margin-top: 5%;
+}
+.blackboard_image .char_role {
+  padding-left: 5%;
+  font-size: 2em;
+}
+.blackboard_image .bi_char_name {
+  padding-left: 5%;
+  font-size: 2em;
 }
 .blackboard_image {
   display: flex;
@@ -117,6 +133,22 @@ header .nav_tags a {
   width: 80%;
   height: 80%;
 }
+.submittal_area {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+  align-items: flex-end;
+  color: blue;
+}
+#bottom_navigation {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 8px #908c3e;
+  text-decoration-line: underline;
+}
+
+
 
 /*FOOTER*/
 .footer_container {
@@ -167,4 +199,7 @@ h2 {
 h5 {
   font-size: 3em;
   text-decoration: underline;
+}
+.role_and_name h5 {
+  font-size: 2em;
 }
