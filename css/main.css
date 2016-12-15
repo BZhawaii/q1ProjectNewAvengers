@@ -54,7 +54,7 @@ h1  {
 .info {
   width: 25em;
   height: 25em;
-  background-color: gray;
+  background-color: darkgray;
   padding: 2%;
   border: 2% solid black;
   margin: 2%;
@@ -70,31 +70,37 @@ h1  {
 .outer_blackboard {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 .blackboard {
   display: flex;
-  height: 60em;
+  height: 90em;
   width: 90%;
-  background-color: white;
+  background-color: lightgray;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0;
 }
 .blackboard_label {
+  background-color: darkgray;
   display: flex;
-  flex-direction: column;
-  width: 30em;
+  flex-direction: row;
+  justify-content: center;
+  height: 12em;
+  width: 100%;
 }
-.blackboard p {
-  font-size: 5vw;
+.bl_label {
+  color: white;
+  font-size: 2vw;
 }
 .blackboard_image {
   display: flex;
   flex-direction: column;
+  width: 80%;
+  height: 80%;
 }
-.just_image img {
-  height: 40em;
-  width: 26em;
-}
+
 /*FOOTER*/
 .footer_container {
   height: 5%;
@@ -106,16 +112,18 @@ h1  {
 .display_container_label {
   padding-top: 1%;
   display: flex;
-  background-color: white;
-  justify-content: center;
   background-color: black;
+  justify-content: center;
+
 }
 h2 {
   color: silver;
   font-family: 'Francois One', sans-serif;
 }
 .new {
-  color: silver;
+  display: flex;
+
+  justify-content: flex-end;
 }
 .display_container_images {
   display: flex;

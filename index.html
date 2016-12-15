@@ -7,10 +7,6 @@
     <title>NewAvengers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="css/main.css">
-
-
-
-
   </head>
 
 
@@ -18,18 +14,12 @@
     <!-- THIS IS CRYPTO MD5 BOWER -->
     <script type="text/javascript" src="/bower_components/crypto-js/crypto-js.js"></script>
 
-    <script type="text/javascript">
-    ts = Date.now();
-    var encrypted = CryptoJS.MD5(ts + 'c1e94b84d2102f0297e3956a992115601ede2399'+ '16ed091cdb99bc7b848bd4a3821fdc4d');
-    console.log("This is the encrypted stuff "+ encrypted);
 
-    </script>
 <!-- HEADER WITH LOGO AND LINK TO OTHER PAGES -->
     <header>
       <div class="header_container">
         <div class="new">
-          <h1>New</h1>
-          <h1>Pokemon</h1>
+          <h1>My</h1>
         </div>
         <div class="logo">
           <img src="css/silveravengerslogo.png" alt="image of the avengers logo">
@@ -54,22 +44,27 @@
             <h5>Enter your team name</h5>
             <label for="teamName"></label>
             <input type="text" id="teamName" name="teamName" value="">
-            <button onclick="saveTheName()" class="save" type="submit" name="submit" value="">Enter</button>
+            <button class="save" type="submit" name="submit" value="">Enter</button>
 
 
           </article>
           <article class="role_name">
             <h5>Enter your hero's role</h5>
-            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Select</a>
+            <form class="input_line">
+              <select id="roles" class="dropdown-button btn" name="roles" placeholder="Select an option here" value="">
+                <option value="" disabled="disabled" selected="selected">Select</option>
 
-            <!-- Dropdown Structure -->
-             <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="#!">Leader</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Co-Leader</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Rank and File</a></li>
-              </ul>
+                <option value="Leader">Leader</option>
+                <option value="Co_leader1">Co-Leader 1</option>
+                <option value="Co_leader2">Co-Leader 2</option>
+                <option value="Member1">Member 1</option>
+                <option value="Member2">Member 2</option>
+                <option value="Member3">Member 3</option>
+                <option value="Member4">Member 4</option>
+
+              </select>
+              <!-- <button id="submit_hero" type="submit" name="submit" value="">Save</button> -->
+            </form>
           </article>
 
 
@@ -92,6 +87,39 @@
             <option value="Shadowcat">Shadowcat</option>
             <option value="Guardian">Guardian</option>
             <option value="Northstar">Northstar</option>
+            <option value="Hawkeye">Hawkeye</option>
+            <option value="Black Widow">Black Widow</option>
+            <option value="Black Panther">Black Panther</option>
+            <option value="Vision">Vision</option>
+            <option value="Cyclops">Cyclops</option>
+            <option value="Falcon">Falcon</option>
+            <option value="Hank Pym">Hank Pym</option>
+            <option value="Quicksilver">Quicksilver</option>
+            <option value="Scarlet Witch">Scarlet Witch</option>
+            <option value="Spider-Man">Spider-Man</option>
+            <option value="Luke Cage">Luke Cage</option>
+            <option value="Wonder Man">Wonder Man</option>
+            <option value="Winter Soldier">Winter Soldier</option>
+            <option value="Nova">Nova</option>
+            <option value="Sif">Sif</option>
+            <option value="Doctor Strange">Doctor Strange</option>
+            <option value="Emma Frost">Emma Frost</option>
+            <option value="Aurora">Aurora</option>
+            <option value="Puck">Puck</option>
+            <option value="Snowbird">Snowbird</option>
+            <option value="Vindicator">Vindicator</option>
+            <option value="Wild Child">Wild Child</option>
+            <option value="Iceman">Iceman</option>
+            <option value="Archangel">Archangel</option>
+            <option value="Polaris">Polaris</option>
+            <option value="Dazzler">Dazzler</option>
+            <option value="Havok">Havok</option>
+
+            <option value="Sway">Sway</option>
+            <option value="Nightcrawler">Nightcrawler</option>
+            <option value="Sunfire">Sunfire</option>
+            <option value="Beast">Beast</option>
+
           </select>
           <!-- <button id="submit_hero" type="submit" name="submit" value="">Save</button> -->
         </form>
@@ -138,29 +166,42 @@
 <!-- BLACKBOARD FOR WORKING -->
     <div class="outer_blackboard">
       <div class="blackboard">
-
         <div class="blackboard_label">
-          <p>This is the preview board for</p>
-          <h4 class="empty_name"></h4>
-          <h1>Avengers</h1>
+          <div class="bl_label">
+            <p>This is the working area for        </p>
+          </div>
+          <div class="bl_new_name">
+            <h2 class="empty_name"></h2>
+          </div>
+          <div class="bl_logo">
+            <h1>  Avengers</h1>
+          </div>
         </div>
 
+        <form class="full_character" action="index.html" method="post">
         <div class="blackboard_image">
-          <p>Superman</p>
-          <div class="just_image">
-
+          <div class="char_role">
+            <p>Undeclared</p>
+          </div>
+          <div class="bi_char_name">
+            <p>Undeclared</p>
+          </div>
+          <div class="bi_image">
             <img src="css/superman.jpeg" alt="image of xxxxxxxxxxx">
           </div>
-          <button type="button" name="button" onclick="function_send_data">Accept</button>
         </div>
+        <div class="bi_button">
+          <input type="submit" name="button" value="payday">
+        </div>
+      </form>
 
       </div>
     </div>
-  <!-- BLACKBOARD FOR WORKING -->
+
 
     </main>
 
-
+<!-- FOOTER FOOTER FOOTER -->
     <footer class="footer_container">
       <p>Data provided by Marvel. © 2016 MARVEL</p>
     </footer>

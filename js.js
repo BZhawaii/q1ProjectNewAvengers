@@ -1,42 +1,88 @@
 
 $(document).ready(function() {
-  console.log("Ready");
+console.log("Ready");
   var new_name_is = "";
   var savedRole = "";
   var new_name_is = "";
-  // console.log(Date.now());
-  saveTheName();
-  function_select_hero();
-  // saveTheRole();
-  // saveTheHero();
-//
+  var passUp = localStorage.getItem('local_name');
+console.log(passUp);
+  $("h4").text(passUp);
+  $("h2").text(passUp);
+  // function_populate_team();
+  // FUNCTION TO SEND DATA FROM LOCAL STORAGE TO NEW TEAM PLACE
+console.log("Right before the event");
+  $(".show").on('click', function(event) {
+    event.preventDefault();
+
+console.log("I'm in the event");
+
+// SENDS LEADER INFO
+    var name = localStorage.getItem('Leader_name');
+    var image = localStorage.getItem('Leader_pic');
+    $(".leader").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+// SENDS CO-LEADERS INFO
+    var name = localStorage.getItem('Co_leader1_name');
+    var image = localStorage.getItem('Co_leader1_pic');
+    $(".co_leader1").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+    var name = localStorage.getItem('Co-leader2_name');
+    var image = localStorage.getItem('Co-leader2_pic');
+    $(".co_leader2").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+// SENDS MEMBER INFO
+    var name = localStorage.getItem('Member1_name');
+    var image = localStorage.getItem('Member1_pic');
+    $(".member1").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+    var name = localStorage.getItem('Member2_name');
+    var image = localStorage.getItem('Member2_pic');
+    $(".member2").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+    var name = localStorage.getItem('Member3_name');
+    var image = localStorage.getItem('Member3_pic');
+    $(".member3").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+    var name = localStorage.getItem('Member4_name');
+    var image = localStorage.getItem('Member4_pic');
+    $(".member4").html("<p>"+name+"</p><img src='"+image+"' alt='this is a picture of "+name+"'>");
+
+  })
+
 });
+  saveTheName();
+  saveTheRole();
+  function_select_hero();
+  function_send_data();
+
+// THIS FUNCTION TAKES THE ENTERED NAMED AND PASSES IT TO BOTH TITLES
+
 function saveTheName() {
+  $("#teamName").change(function () {
   new_name_is = $("#teamName").val();
-console.log(new_name_is);
 // PASS THE newNameIs INTO A LOCAL STORAGE
-// Put the object into storage
   localStorage.setItem('local_name', new_name_is);
+  var passUp = localStorage.getItem('local_name');
+console.log(passUp);
+  $("h4").text(passUp);
+  $("h2").text(passUp);
   // new_name_is = localStorage.getItem('local_name');
-  $("h4").text(new_name_is);
-  $("h2").text(new_name_is);
+})
+}
 
 
 
+
+
+function saveTheRole() {
+  $("#roles").change(function(event) {
+    event.preventDefault();
+    var selected_role = $("#roles").val();
+console.log(selected_role);
+// SEND THE savedRole VARIABLE INTO THE BLACKBOARD
+  $(".char_role").text(selected_role);
+  })
 
 }
-//
-// function saveTheRole() {
-//   savedRole = $("#dropdown1").val();
-//   console.log(savedRole);
-// // SEND THE savedRole VARIABLE INTO THE BLACKBOARD
-// }
-//
-// function saveTheHero() {
-//   savedHero = $("#dropdown2").val();
-//   console.log(savedHero);
-//   // SEND THE savedHero IMAGE VARIABLE INTO THE BLACKBOARD
-// }
+
 
 
 
@@ -60,7 +106,7 @@ var my_hero = selected_hero
   .then(function(response) {
     return response.json().then(function(json) {
       var marvel_object = json;
-    console.log(json);
+console.log(json);
       var my_info = marvel_object.data.results;
 
       var character_name = my_info[0].name;
@@ -68,63 +114,48 @@ var my_hero = selected_hero
       var character_image = my_info[0].thumbnail.path;
 
       for (var i=0; i<my_info.length; i++) {
-        console.log(my_info[i].name);
+console.log(my_info[i].name);
+        var char_name = my_info[i].name;
+
       }
+      localStorage.setItem("name", char_name);
+      pass_name_blackboard();
 
 
 
       var image = character_image + "/portrait_uncanny.jpg";
-    console.log(image);
+console.log(image);
 
-      $(".just_image").html("<img src='" + image + "' " + "alt='this is an image of " + character_name + " from Marvel'>")
+      $(".bi_image").html("<img src='" + image + "' " + "alt='this is an image of " + character_name + " from Marvel'>")
 
   })
 });
 })
 
 }
-// FUNCTION TO SEND DATA FROM BLACKBOARD TO NEW TEAM PAGE
-function function_send_data() {
+// FUNCTION TO SEND THE NAME TO BLACKBOARD
+function pass_name_blackboard() {
+  var blackboard_name = localStorage.getItem("name");
+  $(".bi_char_name").html("<p>"+blackboard_name+"</p>")
 
 }
 
+// FUNCTION TO SEND DATA FROM BLACKBOARD TO LOCAL STORAGE
+function function_send_data() {
+  $(".full_character").on('submit', function(event) {
+    event.preventDefault();
+console.log($("ASDF"));
+    var bb_role = $("div.char_role").text();
+console.log(bb_role);
+    var bb_name = $("div.bi_char_name").text();
+console.log(bb_name);
+    var bb_pic = $("div.bi_image img").attr('src');
+console.log(bb_pic);
 
-
-
-//   console.log($.get("https://gateway.marvel.com:80/v1/public/characters?name=Iron%20Man&apikey=16ed091cdb99bc7b848bd4a3821fdc4d&hash="+encrypted+"&ts="+ts));
-//
-// });
-
-//
-// $(function(){
-// var marvelAPI = 'https://gateway.marvel.com/v1/public/comics?';
-// $.getJSON( marvelAPI, {
-//     apikey: '16ed091cdb99bc7b848bd4a3821fdc4d',
-//     ts: Date.now(),
-//     hash: encrypted
-//   })
-//     .done(function( response ) {
-//       var results = response.data.results;
-//       var resultsLen = results.length;
-//       var output = '<ul>';
-//
-//       for(var i=0; i<resultsLen; i++){
-//         if(results[i].images.length > 0) {
-//           var imgPath = results[i].images[0].path + '/standard_xlarge.' + results[i].images[0].extension;
-//           output += '<li><img src="' + imgPath + '"><br>'+results[i].title+'</li>';
-//         }
-//       }
-//       output += '</ul>'
-//       $('#results').append(output);
-//   });
-//
-// });
-//
-//
-// function getCharacters(name) {
-//   $.get("http(s)://gateway.marvel.com/public/characters", {apikey:"16ed091cdb99bc7b848bd4a3821fdc4d", ts: "1481574243931", hash: encrypted})
-//   for(let i of name) {
-//     console.logt(i);
-//   }
-// })
-//
+    var role_name = bb_role + "_name";
+console.log(role_name);
+    localStorage.setItem(role_name, bb_name);
+    var role_pic = bb_role + "_pic";
+    localStorage.setItem(role_pic, bb_pic);
+  })
+}
