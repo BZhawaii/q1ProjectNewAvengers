@@ -25,7 +25,14 @@
           <img src="css/silveravengerslogo.png" alt="image of the avengers logo">
         </div>
       </div>
-      <a href="new_team.html">See your team</a>
+      <div class="catch_phrase">
+        <div class="phrase">
+          <h1>Choose your own heroes!</h1>
+        </div>
+      </div>
+      <div class="nav_tags">
+        <a href="new_team.html">See your team</a>
+      </div>
     </header>
 
 
@@ -33,22 +40,29 @@
 
 <!-- MAIN INPUT BLOCKS -->
       <div class="middle_container">
-        <article class="input_line1">
-          <h5>Instructions</h5>
-          <p>Have you ever wondered why the Avengers had so many weaker heroes, like Black Widow and Hawkeye?  The team is supposed to be fighting intergalactic threats and defending the planet from the most powerful villains.  The results do speak for themselves.  However, we have all wondered what the Avengers would be like if we could hand pick the heroes that were on the team.  Well, this is your opportunity to do just that.  On this bar you will have the opportunity to name your team of Avengers and then to pick each of the individual heroes that will make up your awesome new team.</p>
-        </article>
+        <div class="inner_middle_container">
+
+        <div class="intro">
+          <h5>New Avengers</h5>
+          <p>Have you ever wondered why the Avengers had so many weaker heroes, like Black Widow and Hawkeye?  The team is supposed to be fighting intergalactic threats and defending the planet from the most powerful villains.  The results do speak for themselves.  However, we have all wondered what the Avengers would be like if we could hand pick the heroes that were on the team.  Well, this is your opportunity to do just that.  On this page you will have the opportunity to name your team of Avengers and then to pick each of the individual heroes that will make up your awesome new team.  Afterwards, you can go to the next page and see your awesome new team.  <b>Go New Avengers!</b></p>
+        </div>
         <div class="input_team_role">
+
+          <h5>Instructions</h5>
+          <p>Please enter the name of your Avengers team.  Then go down the page to the work board to pick your individual heroes.</p>
 
 
           <article class="input_team_name">
-            <h5>Enter your team name</h5>
+            <h5>Enter your team name here</h5>
             <label for="teamName"></label>
             <input type="text" id="teamName" name="teamName" value="">
             <button class="save" type="submit" name="submit" value="">Enter</button>
-
-
           </article>
-          <article class="role_name">
+        </div>
+      </div>
+
+
+          <!-- <article class="role_name">
             <h5>Enter your hero's role</h5>
             <form class="input_line">
               <select id="roles" class="dropdown-button btn" name="roles" placeholder="Select an option here" value="">
@@ -61,9 +75,7 @@
                 <option value="Member2">Member 2</option>
                 <option value="Member3">Member 3</option>
                 <option value="Member4">Member 4</option>
-
               </select>
-              <!-- <button id="submit_hero" type="submit" name="submit" value="">Save</button> -->
             </form>
           </article>
 
@@ -114,16 +126,13 @@
             <option value="Polaris">Polaris</option>
             <option value="Dazzler">Dazzler</option>
             <option value="Havok">Havok</option>
-
             <option value="Sway">Sway</option>
             <option value="Nightcrawler">Nightcrawler</option>
             <option value="Sunfire">Sunfire</option>
             <option value="Beast">Beast</option>
-
           </select>
-          <!-- <button id="submit_hero" type="submit" name="submit" value="">Save</button> -->
         </form>
-      </article>
+      </article> -->
 
 
         <!-- <article class="input_line">
@@ -136,7 +145,6 @@
             <li><a href="#!">Rogue</a></li>
           </ul>
         </article> -->
-      </div>
       </div>
 
 <!-- INFORMATION BLOCKS -->
@@ -164,6 +172,7 @@
 
 
 <!-- BLACKBOARD FOR WORKING -->
+      <!-- BLACKBOARD     BLACKBOARD     BLACKBOARD     BLACKBOARD -->
     <div class="outer_blackboard">
       <div class="blackboard">
         <div class="blackboard_label">
@@ -187,11 +196,11 @@
             <p>Undeclared</p>
           </div>
           <div class="bi_image">
-            <img src="css/superman.jpeg" alt="image of xxxxxxxxxxx">
+            <img src="css/empty_shadow.jpg" alt="image of xxxxxxxxxxx">
           </div>
         </div>
         <div class="bi_button">
-          <input type="submit" name="button" value="payday">
+          <input type="submit" name="button" value="Accept">
         </div>
       </form>
 
@@ -203,7 +212,9 @@
 
 <!-- FOOTER FOOTER FOOTER -->
     <footer class="footer_container">
-      <p>Data provided by Marvel. © 2016 MARVEL</p>
+      <div class="cc_words">
+        <p>Data provided by Marvel. © 2016 MARVEL</p>
+      </div>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

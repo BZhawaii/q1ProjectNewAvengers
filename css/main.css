@@ -14,21 +14,38 @@ body {
 .logo {
   float: right;
 }
+.header_container .new h1 {
+  font-size: 6rem;
+}
 h1  {
   color: silver;
   font-family: 'Francois One', sans-serif;
-
+}
+header .catch_phrase {
+  display: flex;
+  justify-content: center;
+}
+header .nav_tags a {
+  padding-left: 5%;
 }
 /*MAIN*/
 .middle_container {
   display: flex;
   width: 100%;
   height: 40vw;
+
   background-color: silver;
   justify-content: center;
+  flex-wrap: wrap;
 }
-.input_line1 {
-  width: 45%;
+.inner_middle_container {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+
+}
+.intro {
+  width: 48%;
   height: 30vw;
   padding-left: 2%;
   padding-right: 2%;
@@ -106,8 +123,12 @@ h1  {
   height: 5%;
   background-color: gray;
 }
+.cc_words {
+  text-align: center;
+}
 
-/*NEW TEAM PAGE*/
+/*NEW TEAM PAGE    NEW TEAM PAGE     NEW TEAM PAGE     NEW TEAM PAGE*/
+  /*NEW TEAM PAGE    NEW TEAM PAGE     NEW TEAM PAGE     NEW TEAM PAGE*/
 
 .display_container_label {
   padding-top: 1%;
