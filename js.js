@@ -1,28 +1,22 @@
 
 $(document).ready(function() {
-console.log("Ready");
-  $("#accepted").css("display", "none");  // To hide
+  // HIDES THE ACCEPTED TEXT
+  $("#accepted").hide();  // To hide
+
+
   var new_name_is = "";
   var savedRole = "";
   var new_name_is = "";
   var passUp = localStorage.getItem('local_name');
-console.log(passUp);
   $("h4").text(passUp);
   $("h2").text(passUp);
 
-
-
   // function_populate_team();
 // FUNCTION TO SEND DATA FROM LOCAL STORAGE TO NEW TEAM PLACE
-
   $(".show").on('click', function(event) {
     event.preventDefault();
     load_team();
   })
-
-
-
-
 });
   saveTheName();
   saveTheRole();
@@ -39,7 +33,6 @@ function saveTheName() {
 // PASS THE newNameIs INTO A LOCAL STORAGE
   localStorage.setItem('local_name', new_name_is);
   var passUp = localStorage.getItem('local_name');
-console.log(passUp);
   $("h4").text(passUp);
   $("h2").text(passUp);
   // new_name_is = localStorage.getItem('local_name');
@@ -54,11 +47,12 @@ function saveTheRole() {
   $("#roles").change(function(event) {
     event.preventDefault();
     var selected_role = $("#roles").val();
-console.log(selected_role);
 // SEND THE savedRole VARIABLE INTO THE BLACKBOARD
   $(".char_role").text(selected_role);
-  })
 
+  $("#accepted").hide();  // To hide
+
+  })
 }
 
 
@@ -68,42 +62,30 @@ function function_select_hero() {
   $("#heroes").change(function(event) {
     event.preventDefault();
     selected_hero = $("#heroes").val();
-console.log(selected_hero);
-  var private_string = "c1e94b84d2102f0297e3956a992115601ede2399"
-  var public_string = "16ed091cdb99bc7b848bd4a3821fdc4d"
-  var today = new Date();
-  var time_stamp = today.toGMTString();
-  var encrypted_hash = CryptoJS.MD5(time_stamp + private_string + public_string);
-console.log("hash " + encrypted_hash);
-  var url = "https://gateway.marvel.com/v1/public/comics?ts=" + time_stamp + "&apikey=" + public_string + "&hash=" + encrypted_hash;
-console.log("this is the url " + url);
+      var private_string = "c1e94b84d2102f0297e3956a992115601ede2399"
+      var public_string = "16ed091cdb99bc7b848bd4a3821fdc4d"
+      var today = new Date();
+      var time_stamp = today.toGMTString();
+      var encrypted_hash = CryptoJS.MD5(time_stamp + private_string + public_string);
+      var url = "https://gateway.marvel.com/v1/public/comics?ts=" + time_stamp + "&apikey=" + public_string + "&hash=" + encrypted_hash;
 
 
-var my_hero = selected_hero
-  fetch("https://gateway.marvel.com/v1/public/characters?name="+my_hero+"&ts=Tue,%2013%20Dec%202016%2016:35:36%20GMT&apikey=16ed091cdb99bc7b848bd4a3821fdc4d&hash=9dbbfd2a874606c114b07bbb87c5665a")
-  .then(function(response) {
-    return response.json().then(function(json) {
-      var marvel_object = json;
-console.log(json);
-      var my_info = marvel_object.data.results;
-
-      var character_name = my_info[0].name;
-
-      var character_image = my_info[0].thumbnail.path;
-
+      var my_hero = selected_hero
+      fetch("https://gateway.marvel.com/v1/public/characters?name="+my_hero+"&ts=Tue,%2013%20Dec%202016%2016:35:36%20GMT&apikey=16ed091cdb99bc7b848bd4a3821fdc4d&hash=9dbbfd2a874606c114b07bbb87c5665a")
+      .then(function(response) {
+        return response.json().then(function(json) {
+        var marvel_object = json;
+        var my_info = marvel_object.data.results;
+        var character_name = my_info[0].name;
+        var character_image = my_info[0].thumbnail.path;
       for (var i=0; i<my_info.length; i++) {
-console.log(my_info[i].name);
         var char_name = my_info[i].name;
 
       }
       localStorage.setItem("name", char_name);
       pass_name_blackboard();
 
-
-
       var image = character_image + "/portrait_uncanny.jpg";
-console.log(image);
-
       $(".bi_image").html("<img src='" + image + "' " + "alt='this is an image of " + character_name + " from Marvel'>")
 
   })
@@ -122,26 +104,21 @@ function pass_name_blackboard() {
 function function_send_data() {
   $(".full_character").on('submit', function(event) {
     event.preventDefault();
-console.log($("ASDF"));
-    var bb_role = $("div.char_role").text();
-console.log(bb_role);
-    var bb_name = $("div.bi_char_name").text();
-console.log(bb_name);
-    var bb_pic = $("div.bi_image img").attr('src');
-console.log(bb_pic);
-
-    var role_name = bb_role + "_name";
-console.log(role_name);
+      var bb_role = $("div.char_role").text();
+      var bb_name = $("div.bi_char_name").text();
+      var bb_pic = $("div.bi_image img").attr('src');
+      var role_name = bb_role + "_name";
     localStorage.setItem(role_name, bb_name);
-    var role_pic = bb_role + "_pic";
+      var role_pic = bb_role + "_pic";
     localStorage.setItem(role_pic, bb_pic);
-
-
-
-
-$("#accepted").css("display", "");  // To unhide
-
-  })
+// UNHIDES THE ACCEPT TEXT
+// $("#accepted").toggle();
+    // $("#accepted").show();  // To unhide
+   $("#accepted").slideDown("slow");
+  // $("#accepted").slideDown( "slow", function() {
+    // Animation complete.
+  // });
+  });
 }
 
 

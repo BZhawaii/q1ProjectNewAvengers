@@ -140,11 +140,19 @@ header .nav_tags a {
   align-items: flex-end;
   color: blue;
 }
+#accepted .word_accepted {
+  color: blue;
+
+}
+#bottom_navigation .bottom_nav_tags a.bottom_tag {
+  font-size: 2em;
+}
+
 #bottom_navigation {
   display: flex;
   justify-content: flex-end;
   font-size: 2.5em;
-  text-shadow: 2px 2px 8px #908c3e;
+  text-shadow: 4px 4px 16px #908c3e;
   text-decoration-line: underline;
 }
 
@@ -167,6 +175,14 @@ header .nav_tags a {
   display: flex;
   background-color: black;
   justify-content: center;
+}
+#header_bar {
+  display: flex;
+  justify-content: space-around;
+
+}
+ #header_bar h6 {
+  color: white !important;
 
 }
 h2 {
@@ -181,13 +197,14 @@ h2 {
 .display_container_images {
   display: flex;
   background-color: silver;
-  justify-content: space-around;
-  padding-top: 10%
+  width: 100%;
+  justify-content: center;
+  padding-top: 5%
 
 }
 .team img {
-  height: 25em;
-  width: 13em;
+  height: 20vw;
+  width: 98%;
 }
 .team p {
   font-size: 1.5vw;
